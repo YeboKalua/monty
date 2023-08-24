@@ -18,15 +18,9 @@ int main(int argc, char **argv)
     }
     initializer();
     read_file(argv[1]);
-    command_line = getline(&args->line, &n, args->buffer);
-    if (command_line == -1)
-    {
-        dprintf(2, "End of File\n");
-        exit(EXIT_SUCCESS);
-    }
-    else
-    {
-        printf("%s", args->line);
-    }
+    while (getline(&args->line, &n, args->buffer) != -1)
+        {
+            printf("%s", args->line);
+        }
     return (0);
 }

@@ -8,7 +8,7 @@
 void open_error(char *file_name)
 {
     dprintf(2, "Error: Can't open file %s\n", file_name);
-    /* free argument */
+    free_args();
     exit(EXIT_FAILURE);
 }
 
@@ -19,6 +19,6 @@ void open_error(char *file_name)
 void malloc_error()
 {
     dprintf(2, "Error: malloc failed\n");
-    /* free memory (args) */
+    free_args();
     exit(EXIT_FAILURE);
 }
