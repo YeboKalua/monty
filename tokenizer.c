@@ -3,7 +3,7 @@
  * token_count - gets number of tokens
  * @line: line to count words from
  * Return: number of words read
- */
+ *
 int token_count(char *line)
 {
     bool inWord = false;
@@ -25,7 +25,7 @@ int token_count(char *line)
             line++;
         }
     return (count);
-}
+}*/
  
 /**
  * tokenizer - creates tokens from line
@@ -38,10 +38,18 @@ void tokenizer(void)
     char *token = NULL;
     char *c_line = NULL;
     
-    c_line = strdup(args->line);
-    args->n_tokens = token_count(c_line);
+    c_line = malloc(sizeof(char) * (strlen(args->line) + 1));
+    strcpy(c_line, args->line);
+    args->n_tokens = 0;
+    token = strtok(c_line, d);
+    while (token != NULL)
+        {
+            args->n_tokens += 1;
+            token = strtok(NULL, d);
+        }
     
     args->tokens = malloc(sizeof(char *) * (args->n_tokens + 1));
+    strcpy(c_line, args->line);
     token = strtok(c_line, d);
     while (token)
         {
