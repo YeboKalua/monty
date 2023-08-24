@@ -32,7 +32,6 @@ void read_file(char *file_name);
 void open_error(char *file_name);
 void malloc_error(void);
 void free_args(void);
-int token_count(char *line);
 void tokenizer(void);
 void free_tokens(void);
 void invalid_instruction(void);

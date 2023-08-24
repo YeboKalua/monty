@@ -1,31 +1,4 @@
 #include "monty.h"
-/**
- * token_count - gets number of tokens
- * @line: line to count words from
- * Return: number of words read
- *
-int token_count(char *line)
-{
-    bool inWord = false;
-    int count;
-    while (*line != '\n')
-        {
-            if (isspace(*line))
-            {
-                inWord = false;
-            }
-            else
-            {
-                if (!inWord)
-                {
-                    count++;
-                    inWord = true;
-                }
-            }
-            line++;
-        }
-    return (count);
-}*/
  
 /**
  * tokenizer - creates tokens from line
@@ -57,11 +30,9 @@ void tokenizer(void)
             if (args->tokens[i] == NULL)
                 malloc_error();
             strcpy(args->tokens[i], token);
-            printf("Token %d: %s\n", i + 1, args->tokens[i]);
             token = strtok(NULL, d);
             i++;
         }
     args->tokens[i] = NULL;
-    printf("Number of tokens stored: %d\n", i);
     free(c_line);
 }
