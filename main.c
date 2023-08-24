@@ -1,4 +1,5 @@
 #include "monty.h"
+args_t *args = NULL;
 /**
  * main - entry point
  * @argc: number of arguments
@@ -7,5 +8,10 @@
  */
 int main(int argc, char **argv)
 {
-	if (argc == )
+    (void)argv;
+	if (argc != 2)
+    {
+        dprintf(2, "USAGE: monty file\n");
+        exit(EXIT_FAILURE);
+    }
 }
