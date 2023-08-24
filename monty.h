@@ -6,6 +6,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <fcntl.h>
+
+/* Function prototypes */
+void initializer();
+void read_file(char *file_name);
+void open_error(char *file_name);
+void malloc_error();
 
 /**
  * args_struct - structure for argument
@@ -14,7 +21,7 @@
  */
 typedef struct args_struct
 {
-    file *buffer;
+    FILE *buffer;
     char *line;
 }args_t;
 extern args_t *args;

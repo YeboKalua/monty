@@ -18,3 +18,16 @@ void read_file(char *file_name)
         open_error(file_name);
     }
 }
+
+/**
+ * initializer - initializes struct args_t
+ * Return: void
+ */
+void initializer()
+{
+    args = malloc(sizeof(args_t));
+    if (args == NULL)
+        malloc_error();
+    args->buffer = NULL;
+    args->line = NULL;
+}
