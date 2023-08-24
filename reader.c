@@ -28,6 +28,13 @@ void initializer()
     args = malloc(sizeof(args_t));
     if (args == NULL)
         malloc_error();
+
+    args->instruction = malloc(sizeof(instruction_t));
+    if (args->instruction == NULL)
+        malloc_error();
+    
     args->buffer = NULL;
     args->line = NULL;
+    args->n_tokens = 0;
+    args->line_number = 0;
 }

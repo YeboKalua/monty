@@ -20,7 +20,21 @@ int main(int argc, char **argv)
     read_file(argv[1]);
     while (getline(&args->line, &n, args->buffer) != -1)
         {
-            printf("%s", args->line);
+            
+            args->line_number += 1;
+            args->n_tokens = 0;
+            tokenizer();
+            /*for (int i = 0; i < args->n_tokens; i++)
+    {
+        printf("Token %d: %s\n", i + 1, args->tokens[i]);
+    }
+            get_command();
+            printf("Ive managed to get the command");
+            execute();
+            printf("Ive executed");
+            free_tokens();*/
         }
+    close_files();
+    free_args();
     return (0);
 }

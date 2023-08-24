@@ -22,3 +22,16 @@ void malloc_error()
     free_args();
     exit(EXIT_FAILURE);
 }
+
+/**
+ * invalid_instruction - handles invalid input
+ */
+void invalid_instruction(void)
+{
+    dprintf(2, "L%d: unknown instruction %s\n", args->line_number, args->tokens[0]);
+    close_files();
+    free_tokens();
+    free_args();
+    exit(EXIT_FAILURE);
+}
+
