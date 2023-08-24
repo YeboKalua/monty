@@ -14,8 +14,12 @@ void get_command(void)
     };
    if (args->n_tokens == 0)
        return;
+    /*args->instruction = malloc(sizeof(instruction_t));
+    if (args->instruction == NULL)
+        malloc_error();*/
     for (; instructions[i].opcode != NULL; i++)
         {
+             printf("Comparing: '%s' and '%s'\n", instructions[i].opcode, args->tokens[0]);
             if (strcmp(instructions[i].opcode, args->tokens[0]) == 0)
             {
                 args->instruction->opcode = instructions[i].opcode;
