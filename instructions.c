@@ -6,7 +6,8 @@ void get_command(void)
 {
     int i = 0;
     instruction_t instructions[] = {
-    {"push", &push}, {"pall", &pall}/*,
+    {"push", &push}, {"pall", &pall},
+    {NULL, NULL}/*,
     {"pint", &pint}, {"pop", &pop},
     {"swap", &swap}, {"add", &add},
     {"nop", &nop}, {"stack", &stack},
@@ -14,9 +15,11 @@ void get_command(void)
     };
    if (args->n_tokens == 0)
        return;
-    /*args->instruction = malloc(sizeof(instruction_t));
+
+     /*args->instruction = malloc(sizeof(instruction_t));
     if (args->instruction == NULL)
         malloc_error();*/
+   
     for (; instructions[i].opcode != NULL; i++)
         {
              printf("Comparing: '%s' and '%s'\n", instructions[i].opcode, args->tokens[0]);
