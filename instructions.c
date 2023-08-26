@@ -11,7 +11,8 @@ void get_command(void)
 	{"swap", &swap}, {"add", &add}, 
     {"nop", &nop}, {"sub", &sub},
 	{"div", &_div}, {"mul", &mul},
-	{"mod", &mod}, {NULL, NULL}
+	{"mod", &mod}, {"pchar", &pchar},
+	{NULL, NULL}
 	/*{"stack", &stack},
     {"queue", &queue}, {NULL, NULL}*/
     };

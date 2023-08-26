@@ -103,3 +103,28 @@ void mod(stack_t **stack, unsigned int line_number)
 	delete_node();
 	args->stack_length -= 1;
 }
+/**
+  * pchar - prints first character
+  * @stack: pointer to stack
+  * @line_number: line where command stored
+  */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp1;
+
+	(void) stack;
+	if (args->head == NULL)
+	{
+		dprintf(2, "L%d: can't pchar, stack empty\n", line_number);
+		total_free();
+		exit(EXIT_FAILURE);
+	}
+	tmp1 = args->head;
+	if (tmp1->n < 0 || tmp1->n > 127)
+	{
+		dprintf(2, "L%d: can't pchar, value out of range\n", line_number);
+		total_free();
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", tmp1->n);
+}
