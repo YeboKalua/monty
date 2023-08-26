@@ -10,7 +10,8 @@ void get_command(void)
     {"pint", &pint}, {"pop", &pop},
 	{"swap", &swap}, {"add", &add}, 
     {"nop", &nop}, {"sub", &sub},
-	{NULL, NULL}
+	{"div", &_div}, {"mul", &mul},
+	{"mod", &mod}, {NULL, NULL}
 	/*{"stack", &stack},
     {"queue", &queue}, {NULL, NULL}*/
     };
