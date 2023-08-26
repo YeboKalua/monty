@@ -17,6 +17,12 @@ void get_command(void)
     };
    if (args->n_tokens == 0)
        return;
+	if (args->tokens[0][0] == '#')
+	{
+		args->instruction->opcode = "nop";
+		args->instruction->f = nop;
+		return;
+	}
    
     for (; instructions[i].opcode != NULL; i++)
         {
