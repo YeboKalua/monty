@@ -37,4 +37,6 @@ void initializer()
     args->line = NULL;
     args->n_tokens = 0;
     args->line_number = 0;
+    args->head = NULL;
+    args->stack_length = 0;
 }

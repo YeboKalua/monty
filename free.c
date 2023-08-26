@@ -12,6 +12,7 @@ void free_args()
         free(args->instruction);
         args->instruction = NULL;
     }
+    free_head();
     if (args->line)
     {
         free(args->line);
@@ -46,4 +47,27 @@ void close_files(void)
         return;
     fclose(args->buffer);
     args->buffer = NULL;
+}
+/**
+ * free_head - frees head
+ */
+void free_head(void)
+{
+    if (args->head)
+        free_stack(args->head);
+    args->head = NULL;
+}
+/**
+ * free_stack - frees node in stack
+ * @head: first node
+ */
+void free_stack(stack_t *head)
+{
+    if (head == NULL)
+        return;
+    if (head->next != NULL)
+    {
+        free_stack(head->next);
+    }
+    free(head);
 }

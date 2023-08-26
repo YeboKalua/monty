@@ -38,9 +38,14 @@ void invalid_instruction(void);
 void close_files(void);
 void get_command(void);
 void execute(void);
+int number_check(char *str);
+void free_head(void);
+void free_stack(stack_t *head);
+void total_free(void);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-/*void pint(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+/*
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
@@ -69,6 +74,8 @@ typedef struct instruction_s
  * @line_number: tracks line numbers in files
  * @tokens: stores words from line
  * @n_tokens: number of tokens
+ * @head: head node
+ * @stack_length: number of nodes
  * @command: available command
  */
 typedef struct args_struct
@@ -79,6 +86,8 @@ typedef struct args_struct
     int n_tokens;
     unsigned int line_number;
     instruction_t *instruction;
+    stack_t *head;
+    int stack_length;
 }args_t;
 extern args_t *args;
 
