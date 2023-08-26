@@ -54,3 +54,37 @@ void swap(stack_t **stack, unsigned int line_number)
 	tmp2->prev = NULL;
 	args->head = tmp2;
 }
+/**
+  * add - adds the top elements of stack
+  * @stack: stack to add from
+  * @line_number: line where command is
+  */
+void add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp1, *tmp2;
+
+	(void) stack;
+	if (args->stack_length < 2)
+	{
+		dprintf(2, " L%d: can't add, stack too short\n", line_number);
+		total_free();
+		exit(EXIT_FAILURE);
+	}
+	tmp1 = args->head;
+	tmp2 = tmp1->next;
+	tmp2->n = tmp1->n + tmp2->n;
+	total_free();
+	args->stack_length -= 1;
+}
+/**
+  * nop - does nothing
+  * @stack: stack to do nothing from
+  * line_number: line number to read from
+  */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+
+	total_free();
+}

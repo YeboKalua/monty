@@ -8,9 +8,9 @@ void get_command(void)
     instruction_t instructions[] = {
     {"push", &push}, {"pall", &pall},
     {"pint", &pint}, {"pop", &pop},
-	{"swap", &swap}, {NULL, NULL}
-	/* {"add", &add},
-    {"nop", &nop}, {"stack", &stack},
+	{"swap", &swap}, {"add", &add}, 
+    {"nop", &nop}, {NULL, NULL}
+	/*{"stack", &stack},
     {"queue", &queue}, {NULL, NULL}*/
     };
    if (args->n_tokens == 0)
