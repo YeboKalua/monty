@@ -6,8 +6,8 @@
   */
 void sub(stack_t **stack, unsigned int line_number)
 {
-	(void) stack;
 	stack_t *tmp1, *tmp2;
+	(void) stack;
 	
 	if (args->stack_length < 2)
 	{
