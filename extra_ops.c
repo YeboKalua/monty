@@ -33,7 +33,7 @@ void _div(stack_t **stack, unsigned int line_number)
 	(void) stack;
 	if (args->stack_length < 2)
 	{
-		dprintf(2, "L%d: can't div, stack too short", line_number);
+		dprintf(2, "L%d: can't div, stack too short\n", line_number);
 		total_free();
 		exit(EXIT_FAILURE);
 	}
