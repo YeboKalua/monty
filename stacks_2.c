@@ -9,7 +9,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	(void)stack;
 	if (args->head == NULL)
 	{
-		dprintf(2, "L%d: can't pop an empty stack", args->line_number);
+		dprintf(2, "L%d: can't pop an empty stack", line_number);
 		total_free();
 		exit(EXIT_FAILURE);
 	}
