@@ -77,3 +77,25 @@ void rotr(stack_t **stack, unsigned int line_number)
 	last->prev = NULL;
 	args->head = last;
 }
+/**
+  * stack - formats to stack
+  * @stack: pointer to stack
+  * @line_number: Line where opcode stored
+  */
+void stack(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+	args->stack = 1;
+}
+/**
+  * queue - formats to queue
+  * @stack: pointer to stack
+  * @line_number: Line where opcode stored
+  */
+void queue(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+	args->stack = 0;
+}

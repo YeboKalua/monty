@@ -45,6 +45,8 @@ void free_head(void);
 void free_stack(stack_t *head);
 void total_free(void);
 void delete_node(void);
+
+/* opcodes */
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
@@ -60,6 +62,8 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
 /*
 void stack(stack_t **stack, unsigned int line_number);
 void queue(stack_t **stack, unsigned int line_number);*/
@@ -87,7 +91,7 @@ typedef struct instruction_s
  * @n_tokens: number of tokens
  * @head: head node
  * @stack_length: number of nodes
- * @command: available command
+ * @stack: flag for stack/queue
  */
 typedef struct args_struct
 {
@@ -99,6 +103,7 @@ typedef struct args_struct
     instruction_t *instruction;
     stack_t *head;
     int stack_length;
+	int stack;
 }args_t;
 extern args_t *args;
 

@@ -12,12 +12,26 @@ void push(stack_t **stack, unsigned int line_number)
         malloc_error();
     (*stack)->next = (*stack)->prev = NULL;
     (*stack)->n = (int) atoi(args->tokens[1]);
-    if (args->head != NULL)
-    {
-        (*stack)->next = args->head;
-        args->head->prev = *stack;
-    }
-    args->head = *stack;
+    if (args->head == NULL)
+		args->head = *stack;
+	else
+	{
+		if (args->stack)
+		{
+			(*stack)->next = args->head;
+        	args->head->prev = *stack;
+			args->head = *stack;
+		}
+		else
+		{
+			stack_t *tmp = args->head;
+
+			while (tmp->next)
+				tmp = tmp->next;
+			tmp->next = *stack;
+			(*stack)->prev = tmp;
+		}
+	}
     args->stack_length += 1;
 }
 /**
