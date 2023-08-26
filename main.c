@@ -9,8 +9,7 @@ args_t *args = NULL;
 int main(int argc, char **argv)
 {
     size_t n = 0;
-    ssize_t command_line;
-    
+
 	if (argc != 2)
     {
         dprintf(2, "USAGE: monty file\n");
